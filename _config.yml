@@ -1,5 +1,12 @@
 title: Jerry · 保持探索
+
 description: 一个生活在数字与魔法之间的高中生
-author: Jerry
+
+baseurl: "/Jerryhome"
+
+url: "https://jerry-future666.github.io"
 
 markdown: kramdown
+
+plugins:
+  - jekyll-feed
