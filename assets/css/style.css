@@ -41,6 +41,7 @@ body {
 }
 
 /* ---------- 头部区域 ---------- */
+
 .hero {
     display: flex;
     flex-direction: column;
@@ -69,6 +70,7 @@ body {
         opacity: 0;
         transform: translateY(18px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -107,7 +109,9 @@ body {
     opacity: 0.6;
 }
 
+
 /* ---------- 格言与介绍组合区域 ---------- */
+
 .intro-group {
     display: flex;
     flex-direction: column;
@@ -115,7 +119,6 @@ body {
     margin-top: -24px;
 }
 
-/* 签名格言 */
 .motto {
     font-size: 18px;
     font-weight: 500;
@@ -127,7 +130,9 @@ body {
     padding-left: 0;
     opacity: 0;
     transform: translateY(10px);
-    transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+    transition:
+        opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+        transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .motto.visible {
@@ -147,7 +152,9 @@ body {
     border-radius: 1px;
 }
 
-/* ---------- 关于我：分行杂志排版 ---------- */
+
+/* ---------- 关于我 ---------- */
+
 .about-lines {
     display: flex;
     flex-direction: column;
@@ -155,7 +162,9 @@ body {
     max-width: 320px;
     opacity: 0;
     transform: translateY(10px);
-    transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+    transition:
+        opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+        transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .about-lines.visible {
@@ -182,7 +191,9 @@ body {
     font-weight: 580;
 }
 
-/* ---------- 热爱之物：杂志目录风格 ---------- */
+
+/* ---------- 热爱之物 ---------- */
+
 .passions {
     display: flex;
     flex-direction: column;
@@ -197,7 +208,9 @@ body {
     padding-bottom: 20px;
     opacity: 0;
     transform: translateY(12px);
-    transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+    transition:
+        opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+        transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .passion-item.visible {
@@ -241,8 +254,9 @@ body {
     line-height: 1.5;
     letter-spacing: 0.01em;
 }
+ 
+/* ---------- 联系方式 ---------- */
 
-/* ---------- 联系方式：创意错位排版 ---------- */
 .contact {
     display: flex;
     flex-direction: column;
@@ -256,7 +270,9 @@ body {
     gap: 20px;
     text-decoration: none;
     color: var(--text);
-    transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1), transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+    transition:
+        opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+        transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
     opacity: 0;
     transform: translateY(10px);
 }
@@ -317,18 +333,70 @@ body {
     opacity: 0;
 }
 
+
+/* ---------- 未来项目模块接口 ---------- */
+/*
+未来 projects.html 可以直接使用：
+
+<section class="future-section">
+    内容
+</section>
+
+不会影响现有页面。
+*/
+
+.future-section {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.future-card {
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 20px;
+}
+
+
 /* ---------- 底部 ---------- */
+
 .footer {
     font-size: 12px;
     color: var(--text-tertiary);
     letter-spacing: 0.03em;
     display: flex;
-    justify-content: space-between;
-    align-items: flex-end;
+    flex-direction: column;
+    gap: 16px;
     margin-top: 16px;
     padding-top: 16px;
     border-top: 1px solid var(--border);
 }
+
+
+/* 未来底部导航接口 */
+
+.footer-nav {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.footer-nav a {
+    color: var(--text-tertiary);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-nav a:hover {
+    color: var(--text);
+}
+
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 
 .back-to-top {
     color: var(--text-tertiary);
@@ -345,35 +413,46 @@ body {
     color: var(--text);
 }
 
-/* ========== 响应式微调 ========== */
+
+/* ---------- 响应式微调 ---------- */
+
 @media (max-width: 380px) {
+
     .main {
         padding: 32px 20px 40px;
         gap: 40px;
     }
+
     .hero-letter {
         font-size: 80px;
     }
+
     .motto {
         font-size: 16px;
         max-width: 240px;
     }
+
     .about-line,
     .about-line--strong {
         font-size: 14px;
     }
+
     .about-lines {
         max-width: 280px;
         gap: 8px;
     }
+
     .contact-value {
         font-size: 15px;
     }
+
     .passion-title {
         font-size: 16px;
     }
+
     .intro-group {
         gap: 14px;
         margin-top: -20px;
     }
+
 }
