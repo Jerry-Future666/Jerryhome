@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8">
-<title>{{ page.title }}</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>Jerry · 保持探索</title>
+    <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
 </head>
-
 <body>
+    <div class="main" id="top">
+        {{ content }}
+    </div>
 
-{{ content }}
-
+    <script src="{{ '/assets/js/script.js' | relative_url }}"></script>
 </body>
 </html>
