@@ -1,12 +1,10 @@
 ---
 layout: default
-title: Jerry · 保持探索
 ---
 
-# Jerry
-
-保持探索。
-
-一个生活在数字与魔法之间的高中生。
-
-欢迎来到我的个人空间。
+{% include hero.html %}
+{% include about.html %}
+{% include passions.html %}
+{% include projects.html %}
+{% include contact.html %}
+{% include footer.html %}
