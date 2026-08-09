@@ -17,44 +17,52 @@ title: 创作项目 Creative Projects
     </header>
 
 
-    <section class="project-section">
+    <section class="project-list">
 
-        <h2>01</h2>
 
-        <h3>作品展示</h3>
+        {% for project in site.projects %}
 
-        <p>
-            展示已经完成的创意作品，
-            记录想法从概念到实现的过程。
-        </p>
+
+        <article class="project-item">
+
+
+            <h2>
+
+                <a class="content-link" href="{{ project.url | relative_url }}">
+
+                    {{ project.title }}
+
+                </a>
+
+            </h2>
+
+
+            {% if project.status %}
+
+            <p class="project-status">
+
+                {{ project.status }}
+
+            </p>
+
+            {% endif %}
+
+
+
+            <p>
+
+                {{ project.excerpt | strip_html }}
+
+            </p>
+
+
+        </article>
+
+
+        {% endfor %}
+
 
     </section>
 
-
-    <section class="project-section">
-
-        <h2>02</h2>
-
-        <h3>探索实验</h3>
-
-        <p>
-            记录正在尝试的新方向，
-            包括未完成的想法与创作实验。
-        </p>
-
-    </section>
-
-
-    <section class="project-section">
-
-        <h2>03</h2>
-
-        <h3>未来计划</h3>
-
-        <p>
-            记录未来希望探索的创作领域。
-        </p>
-
-    </section>
 
 </section>
