@@ -582,6 +582,61 @@ body {
     max-width: 340px;
 }
 
+/* ---------- 档案页面 ---------- */
+
+.archive-page {
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+}
+
+.archive-header {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.archive-header h1 {
+    font-size: 32px;
+    font-weight: 650;
+    letter-spacing: -0.03em;
+    color: var(--text);
+}
+
+.archive-header p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: var(--text-secondary);
+    max-width: 320px;
+}
+
+
+.archive-section {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.archive-section h2 {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-tertiary);
+    letter-spacing: 0.08em;
+}
+
+.archive-section h3 {
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--text);
+    letter-spacing: -0.02em;
+}
+
+.archive-section p {
+    font-size: 15px;
+    line-height: 1.8;
+    color: var(--text-secondary);
+    max-width: 340px;
+}
 /* ---------- 响应式微调 ---------- */
 
 @media (max-width: 380px) {
