@@ -637,6 +637,84 @@ body {
     color: var(--text-secondary);
     max-width: 340px;
 }
+
+/* ---------- 博客页面 ---------- */
+
+.blog-page {
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+}
+
+
+.blog-header {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+
+.blog-header h1 {
+    font-size: 32px;
+    font-weight: 650;
+    letter-spacing: -0.03em;
+    color: var(--text);
+}
+
+
+.blog-header p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: var(--text-secondary);
+    max-width: 320px;
+}
+
+
+.blog-list {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+
+.blog-item {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 24px;
+}
+
+
+.blog-item:last-child {
+    border-bottom: none;
+}
+
+
+.blog-item h2 {
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+}
+
+
+.blog-item h2 a {
+    color: var(--text);
+    text-decoration: none;
+}
+
+
+.blog-item h2 a:active {
+    opacity: 0.65;
+}
+
+
+.blog-item p {
+    font-size: 14px;
+    line-height: 1.7;
+    color: var(--text-secondary);
+}
+
 /* ---------- 响应式微调 ---------- */
 
 @media (max-width: 380px) {
