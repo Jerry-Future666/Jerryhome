@@ -47,7 +47,7 @@
 
 
 
-    // 2. 单元素动画
+    // 2. 单元素动画（只触发一次）
 
     const singleElements =
         document.querySelectorAll('[data-animate]');
@@ -66,9 +66,7 @@
 
                     el.classList.add('visible');
 
-                } else {
-
-                    el.classList.remove('visible');
+                    singleObserver.unobserve(el);
 
                 }
 
