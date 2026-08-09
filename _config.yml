@@ -5,3 +5,8 @@ baseurl: "/Jerryhome"
 url: "https://jerry-future666.github.io"
 
 markdown: kramdown
+
+
+collections:
+  projects:
+    output: true
