@@ -202,10 +202,10 @@ body {
 
 .passion-item {
     display: flex;
-    align-items: baseline;
-    gap: 12px;
+    align-items: flex-start;
+    gap: 16px;
     border-bottom: 1px solid var(--border);
-    padding-bottom: 14px;
+    padding-bottom: 18px;
     opacity: 0;
     transform: translateY(12px);
     transition:
@@ -223,21 +223,19 @@ body {
     padding-bottom: 0;
 }
 
-.passion-index {
-    font-size: 12px;
-    font-weight: 500;
-    color: var(--text-tertiary);
-    min-width: 18px;
-    letter-spacing: 0.04em;
-}
-
 .passion-emoji {
-    font-size: 18px;
+    font-size: 20px;
     opacity: 0.85;
+    width: 28px;
+    flex-shrink: 0;
+    line-height: 1.4;
 }
 
 .passion-content {
     flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
 }
 
 .passion-title {
@@ -245,11 +243,10 @@ body {
     font-weight: 600;
     color: var(--text);
     letter-spacing: -0.01em;
-    margin-bottom: 2px;
 }
 
 .passion-desc {
-    font-size: 13px;
+    font-size: 14px;
     color: var(--text-secondary);
     line-height: 1.45;
     letter-spacing: 0.01em;
