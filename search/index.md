@@ -18,16 +18,17 @@ title: 搜索 Search
 
     <div class="search-box">
 
-        <span class="search-icon">
+        <span class="search-icon" aria-hidden="true">
             🔍
         </span>
 
-
-        <input 
+        <input
             id="searchInput"
             class="search-input"
-            type="text"
+            type="search"
             placeholder="搜索文章..."
+            autocomplete="off"
+            enterkeyhint="search"
         >
 
     </div>
@@ -43,103 +44,108 @@ title: 搜索 Search
 
 <script>
 
-let posts = [];
+const posts = [
 
+{% for post in site.posts %}
 
-fetch("{{ '/search.json' | relative_url }}")
-.then(response => response.json())
-.then(data => {
+    {
+        title: {{ post.title | jsonify }},
+        excerpt: {{ post.excerpt | strip_html | strip_newlines | jsonify }},
+        url: {{ post.url | relative_url | jsonify }}
+    }
 
-    posts = data;
+    {% unless forloop.last %},{% endunless %}
 
-});
+{% endfor %}
 
+];
 
 
 const input = document.getElementById("searchInput");
-
 const results = document.getElementById("searchResults");
 
 
+function performSearch() {
 
-input.addEventListener("input", function(){
-
-
-    const keyword = this.value.toLowerCase();
-
+    const keyword = input.value.trim().toLowerCase();
 
     results.innerHTML = "";
 
 
+    if (!keyword) {
+        return;
+    }
 
-    if(!keyword){
+
+    const matchedPosts = posts.filter(post => {
+
+        const title =
+            String(post.title || "").toLowerCase();
+
+        const excerpt =
+            String(post.excerpt || "").toLowerCase();
+
+        return (
+            title.includes(keyword) ||
+            excerpt.includes(keyword)
+        );
+
+    });
+
+
+    if (matchedPosts.length === 0) {
+
+        const empty = document.createElement("p");
+
+        empty.textContent = "没有找到相关文章。";
+
+        empty.className = "search-empty";
+
+        results.appendChild(empty);
 
         return;
 
     }
 
 
-
-    const matched = posts.filter(post => {
-
-
-        return (
-
-            post.title.toLowerCase().includes(keyword)
-
-            ||
-
-            post.excerpt.toLowerCase().includes(keyword)
-
-        );
-
-
-    });
-
-
-
-    matched.forEach(post => {
-
-
+    matchedPosts.forEach(post => {
 
         const item = document.createElement("article");
 
+        item.className = "search-result-item";
 
 
-        item.innerHTML = `
+        const title = document.createElement("h2");
+
+        const link = document.createElement("a");
+
+        link.className = "content-link";
+
+        link.href = post.url;
+
+        link.textContent = post.title;
+
+        title.appendChild(link);
 
 
-            <h2>
+        const excerpt = document.createElement("p");
 
-                <a class="content-link" href="${post.url}">
-
-                    ${post.title}
-
-                </a>
-
-            </h2>
+        excerpt.textContent = post.excerpt;
 
 
-            <p>
+        item.appendChild(title);
 
-                ${post.excerpt}
-
-            </p>
-
-
-        `;
-
-
+        item.appendChild(excerpt);
 
         results.appendChild(item);
 
-
-
     });
 
+}
 
 
-});
+input.addEventListener("input", performSearch);
 
+input.addEventListener("search", performSearch);
 
 </script>
