@@ -23,37 +23,52 @@ title: 创作项目 Creative Projects
         {% for project in site.projects %}
 
 
-        <article class="project-item">
+        <article class="project-card">
 
 
-            <h2>
-
-                <a class="content-link" href="{{ project.url | relative_url }}">
-
-                    {{ project.title }}
-
-                </a>
-
-            </h2>
+            <header class="project-card-header">
 
 
-            {% if project.status %}
+                <h2>
 
-            <p class="project-status">
+                    <a class="content-link" href="{{ project.url | relative_url }}">
 
-                {{ project.status }}
+                        {{ project.title }}
+
+                    </a>
+
+                </h2>
+
+
+                {% if project.status %}
+
+                <span class="project-tag">
+
+                    {{ project.status }}
+
+                </span>
+
+                {% endif %}
+
+
+            </header>
+
+
+
+            <p class="project-description">
+
+                {{ project.excerpt | strip_html | strip_newlines }}
 
             </p>
 
-            {% endif %}
 
 
+            <a class="project-more content-link" href="{{ project.url | relative_url }}">
 
-            <p>
+                查看项目
 
-                {{ project.excerpt | strip_html }}
+            </a>
 
-            </p>
 
 
         </article>
