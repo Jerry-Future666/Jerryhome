@@ -426,6 +426,41 @@ body {
     opacity: 0;
 }
 
+/* ---------- 全局内容链接 ---------- */
+
+.content-link {
+    color: var(--text);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+
+    transition:
+        opacity 0.3s ease,
+        transform 0.3s ease;
+}
+
+
+.content-link::after {
+    content: "→";
+    color: var(--text-tertiary);
+    opacity: 0.7;
+
+    transition:
+        transform 0.3s ease,
+        opacity 0.3s ease;
+}
+
+
+.content-link:hover::after {
+    transform: translateX(4px);
+    opacity: 1;
+}
+
+
+.content-link:active {
+    opacity: 0.65;
+}
 
 /* ---------- 未来项目模块接口 ---------- */
 /*
