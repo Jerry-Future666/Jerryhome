@@ -302,6 +302,15 @@ body {
     font-weight: 600;
     color: var(--text);
     letter-spacing: -0.01em;
+    text-decoration: none;
+}
+
+.explore-title:visited {
+    color: var(--text);
+}
+
+.explore-title:active {
+    opacity: 0.65;
 }
 /* ---------- 联系方式 ---------- */
 
