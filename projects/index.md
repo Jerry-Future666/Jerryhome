@@ -63,11 +63,7 @@ title: 创作项目 Creative Projects
 
 
 
-            <a class="project-more content-link" href="{{ project.url | relative_url }}">
-
-                查看项目
-
-            </a>
+            
 
 
 
