@@ -16,12 +16,21 @@ title: 搜索 Search
     </header>
 
 
-    <input 
-        id="searchInput"
-        class="search-input"
-        type="text"
-        placeholder="搜索文章..."
-    >
+    <div class="search-box">
+
+        <span class="search-icon">
+            🔍
+        </span>
+
+
+        <input 
+            id="searchInput"
+            class="search-input"
+            type="text"
+            placeholder="搜索文章..."
+        >
+
+    </div>
 
 
     <section id="searchResults" class="search-results">
@@ -36,6 +45,7 @@ title: 搜索 Search
 
 let posts = [];
 
+
 fetch("{{ '/search.json' | relative_url }}")
 .then(response => response.json())
 .then(data => {
@@ -45,29 +55,44 @@ fetch("{{ '/search.json' | relative_url }}")
 });
 
 
+
 const input = document.getElementById("searchInput");
+
 const results = document.getElementById("searchResults");
+
 
 
 input.addEventListener("input", function(){
 
+
     const keyword = this.value.toLowerCase();
+
 
     results.innerHTML = "";
 
 
+
     if(!keyword){
+
         return;
+
     }
+
 
 
     const matched = posts.filter(post => {
 
+
         return (
+
             post.title.toLowerCase().includes(keyword)
+
             ||
+
             post.excerpt.toLowerCase().includes(keyword)
+
         );
+
 
     });
 
@@ -76,30 +101,45 @@ input.addEventListener("input", function(){
     matched.forEach(post => {
 
 
+
         const item = document.createElement("article");
+
 
 
         item.innerHTML = `
 
+
             <h2>
+
                 <a class="content-link" href="${post.url}">
+
                     ${post.title}
+
                 </a>
+
             </h2>
 
+
             <p>
+
                 ${post.excerpt}
+
             </p>
 
+
         `;
+
 
 
         results.appendChild(item);
 
 
+
     });
 
 
+
 });
+
 
 </script>
