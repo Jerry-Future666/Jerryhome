@@ -303,6 +303,38 @@ body {
     color: var(--text);
     letter-spacing: -0.01em;
     text-decoration: none;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    transition:
+        opacity 0.3s ease,
+        transform 0.3s ease;
+}
+
+
+.explore-title::after {
+    content: "→";
+    font-size: 16px;
+    color: var(--text-tertiary);
+    opacity: 0;
+    transform: translateX(-6px);
+
+    transition:
+        opacity 0.3s ease,
+        transform 0.3s ease;
+}
+
+
+.explore-title:hover::after {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+
+.explore-title:active {
+    opacity: 0.65;
 }
 
 .explore-title:visited {
