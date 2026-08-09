@@ -35,7 +35,7 @@ title: 分类 Categories
 
             {% for post in category[1] %}
 
-                <a href="{{ post.url | relative_url }}">
+                <a class="content-link" href="{{ post.url | relative_url }}">
                     {{ post.title }}
                 </a>
 
