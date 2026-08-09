@@ -47,7 +47,7 @@
 
 
 
-    // 2. 单元素动画（只触发一次）
+    // 2. 单元素动画（可重复触发）
 
     const singleElements =
         document.querySelectorAll('[data-animate]');
@@ -66,13 +66,15 @@
 
                     el.classList.add('visible');
 
-                    singleObserver.unobserve(el);
+                } else {
+
+                    el.classList.remove('visible');
 
                 }
 
             });
 
-        }, { threshold: 0.25 });
+        }, { threshold: 0.35 });
 
 
         singleElements.forEach(el => {
@@ -86,7 +88,7 @@
 
 
 
-    // 3. 分组动画
+    // 3. 分组动画（可重复触发）
 
     const groupElements =
         document.querySelectorAll('[data-animate-group]');
@@ -115,6 +117,12 @@
 
 
                     children.forEach((child,index)=>{
+
+                        const oldTimer = groupTimers.get(child);
+
+                        if (oldTimer) {
+                            clearTimeout(oldTimer);
+                        }
 
 
                         const timer =
@@ -147,7 +155,7 @@
             });
 
 
-        }, {threshold:0.15});
+        }, {threshold:0.25});
 
 
 
