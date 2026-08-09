@@ -1,6 +1,7 @@
 (function() {
 
     // 1. J 字母动画
+
     const heroLetter = document.getElementById('heroLetter');
 
     if (heroLetter) {
@@ -184,6 +185,21 @@
             });
 
         });
+
+    }
+
+
+
+    // 5. Footer年份自动更新
+
+    const currentYear =
+        document.getElementById('currentYear');
+
+
+    if(currentYear){
+
+        currentYear.textContent =
+            new Date().getFullYear();
 
     }
 
