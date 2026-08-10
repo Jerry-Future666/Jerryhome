@@ -24,7 +24,16 @@ title: 创作项目 Creative Projects
 
 
         <article class="project-card">
+        
+{% if project.cover %}
 
+<img 
+    class="project-cover"
+    src="{{ project.cover | relative_url }}"
+    alt="{{ project.title }}"
+>
+
+{% endif %}
 
             <header class="project-card-header">
 
