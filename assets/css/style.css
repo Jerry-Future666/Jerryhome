@@ -1234,3 +1234,30 @@ body {
 .project-content li {
     margin-bottom: 8px;
 }
+
+{% if project.category %}
+
+<p class="project-category">
+
+    {{ project.category }}
+
+</p>
+
+{% endif %}
+
+
+{% if project.tags %}
+
+<div class="project-tags">
+
+{% for tag in project.tags %}
+
+<span>
+    {{ tag }}
+</span>
+
+{% endfor %}
+
+</div>
+
+{% endif %}
