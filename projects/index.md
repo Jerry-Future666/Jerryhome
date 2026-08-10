@@ -85,11 +85,11 @@ title: 创作项目 Creative Projects
             <div class="project-side">
 
 
-                <span class="project-arrow">
+               <a class="project-arrow" href="{{ project.url | relative_url }}">
 
-                    →
+    →
 
-                </span>
+</a>
 
 
 
