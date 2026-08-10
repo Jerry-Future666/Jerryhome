@@ -7,7 +7,6 @@ layout: default
 
     <header class="project-header">
 
-
         <h1>
             {{ page.title }}
         </h1>
@@ -15,9 +14,22 @@ layout: default
 
         {% if page.status %}
 
-        <span class="project-status">
+        <div class="project-status">
+
             {{ page.status }}
-        </span>
+
+        </div>
+
+        {% endif %}
+
+
+        {% if page.date %}
+
+        <p class="project-date">
+
+            {{ page.date }}
+
+        </p>
 
         {% endif %}
 
@@ -26,13 +38,13 @@ layout: default
 
 
 
-    <section class="project-content">
+    <article class="project-content">
 
 
         {{ content }}
 
 
-    </section>
+    </article>
 
 
 </section>
