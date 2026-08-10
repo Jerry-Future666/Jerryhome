@@ -1261,3 +1261,97 @@ body {
 </div>
 
 {% endif %}
+
+/* Projects 卡片布局 */
+
+.project-card {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-start;
+
+    padding: 28px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 18px;
+
+}
+
+
+.project-main {
+
+    flex: 1;
+
+}
+
+
+.project-main h2 {
+
+    margin: 0 0 10px;
+
+}
+
+
+.project-category {
+
+    margin: 0 0 12px;
+
+    color: var(--text-secondary);
+
+}
+
+
+.project-tags {
+
+    display: flex;
+
+    gap: 8px;
+
+    flex-wrap: wrap;
+
+}
+
+
+.project-tags span {
+
+    padding: 4px 10px;
+
+    border-radius: 999px;
+
+    border: 1px solid var(--border);
+
+    font-size: 12px;
+
+}
+
+
+.project-side {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+}
+
+
+.project-arrow {
+
+    font-size: 24px;
+
+}
+
+
+.project-intro {
+
+    margin-top: 28px;
+
+    font-size: 13px;
+
+    color: var(--text-secondary);
+
+}
