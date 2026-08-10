@@ -1055,3 +1055,19 @@ body {
 
 
 }
+/* Blog 链接修复 */
+
+.blog-page a {
+
+    color: var(--text);
+
+    text-decoration: none;
+
+}
+
+
+.blog-page a:visited {
+
+    color: var(--text);
+
+}
