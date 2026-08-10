@@ -33,6 +33,32 @@ title: 创作项目 Creative Projects
                     <a class="content-link" href="{{ project.url | relative_url }}">
 
                         {{ project.title }}
+                        {% if project.category %}
+
+<p class="project-category">
+
+    {{ project.category }}
+
+</p>
+
+{% endif %}
+
+
+{% if project.tags %}
+
+<div class="project-tags">
+
+{% for tag in project.tags %}
+
+<span>
+    {{ tag }}
+</span>
+
+{% endfor %}
+
+</div>
+
+{% endif %}
 
                     </a>
 
