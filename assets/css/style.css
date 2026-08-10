@@ -1445,3 +1445,45 @@ body {
     justify-content: space-between;
 
 }
+/* Projects v2 状态优化 */
+
+
+.project-status {
+
+    display: inline-block;
+
+    padding: 6px 14px;
+
+    border-radius: 999px;
+
+    border: 1px solid #ddd;
+
+    color: #777;
+
+    font-size: 13px;
+
+    white-space: nowrap;
+
+}
+
+
+
+.project-side {
+
+    min-width: 90px;
+
+    height: 100%;
+
+}
+
+
+
+.project-arrow {
+
+    color: #888;
+
+    font-size: 22px;
+
+    margin-bottom: 40px;
+
+}
