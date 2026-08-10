@@ -31,7 +31,7 @@ title: 创作项目 Creative Projects
 
                 <h2>
 
-                    <a class="content-link" href="{{ project.url | relative_url }}">
+                    <a href="{{ project.url | relative_url }}">
 
                         {{ project.title }}
 
