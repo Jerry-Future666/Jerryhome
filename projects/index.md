@@ -25,7 +25,8 @@ title: 创作项目 Creative Projects
 
         <article class="project-card">
 
-            <header class="project-card-header">
+
+            <div class="project-main">
 
 
                 <h2>
@@ -33,41 +34,68 @@ title: 创作项目 Creative Projects
                     <a class="content-link" href="{{ project.url | relative_url }}">
 
                         {{ project.title }}
-                        {% if project.category %}
-
-<p class="project-category">
-
-    {{ project.category }}
-
-</p>
-
-{% endif %}
-
-
-{% if project.tags %}
-
-<div class="project-tags">
-
-{% for tag in project.tags %}
-
-<span>
-    {{ tag }}
-</span>
-
-{% endfor %}
-
-</div>
-
-{% endif %}
 
                     </a>
 
                 </h2>
 
 
+
+                {% if project.category %}
+
+                <p class="project-category">
+
+                    {{ project.category }}
+
+                </p>
+
+                {% endif %}
+
+
+
+                {% if project.tags %}
+
+                <div class="project-tags">
+
+                    {% for tag in project.tags %}
+
+                    <span>
+                        {{ tag }}
+                    </span>
+
+                    {% endfor %}
+
+                </div>
+
+                {% endif %}
+
+
+
+                <p class="project-description">
+
+                    项目介绍
+
+                </p>
+
+
+            </div>
+
+
+
+            <div class="project-side">
+
+
+                <span class="project-arrow">
+
+                    →
+
+                </span>
+
+
+
                 {% if project.status %}
 
-                <span class="project-tag">
+                <span class="project-status">
 
                     {{ project.status }}
 
@@ -76,19 +104,7 @@ title: 创作项目 Creative Projects
                 {% endif %}
 
 
-            </header>
-
-
-
-            <p class="project-description">
-
-                {{ project.excerpt | strip_html | strip_newlines }}
-
-            </p>
-
-
-
-            
+            </div>
 
 
 
