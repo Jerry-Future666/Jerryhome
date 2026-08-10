@@ -1071,3 +1071,26 @@ body {
     color: var(--text);
 
 }
+
+/* Projects 箭头链接 */
+
+.project-arrow {
+
+    color: #888;
+
+    text-decoration: none;
+
+    font-size:22px;
+
+    line-height:1;
+
+    margin-top:5px;
+
+}
+
+
+.project-arrow:hover {
+
+    opacity:.65;
+
+}
