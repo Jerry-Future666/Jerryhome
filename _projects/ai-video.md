@@ -1,8 +1,19 @@
 ---
 layout: project
+
 title: AI 视频创作实验
+
 date: 2026-08-09
+
 status: 进行中
+
+category: AI实验
+
+tags:
+  - AI
+  - 视频
+  - 创作
+
 ---
 
 
