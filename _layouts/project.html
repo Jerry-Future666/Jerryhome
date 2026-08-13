@@ -4,7 +4,6 @@ layout: default
 
 <section class="project-page">
 
-
     <header class="project-header">
 
         <h1>
@@ -12,37 +11,66 @@ layout: default
         </h1>
 
 
-        {% if page.status %}
+        {% if page.category %}
 
-        <div class="project-status">
+        <p class="project-category">
 
-            {{ page.status }}
-
-        </div>
-
-        {% endif %}
-
-
-        {% if page.date %}
-
-        <p class="project-date">
-
-            {{ page.date }}
+            {{ page.category }}
 
         </p>
 
         {% endif %}
 
 
-    </header>
+        {% if page.tags %}
 
+        <div class="project-tags">
+
+            {% for tag in page.tags %}
+
+            <span>
+                {{ tag }}
+            </span>
+
+            {% endfor %}
+
+        </div>
+
+        {% endif %}
+
+
+        <div class="project-meta">
+
+            {% if page.status %}
+
+            <span class="project-status">
+
+                {{ page.status }}
+
+            </span>
+
+            {% endif %}
+
+
+            {% if page.date %}
+
+            <p class="project-date">
+
+                {{ page.date }}
+
+            </p>
+
+            {% endif %}
+
+        </div>
+
+
+    </header>
 
 
     <article class="project-content">
 
-
         {{ content }}
-
 
     </article>
 
